@@ -19,4 +19,4 @@ subject = "The peak VV yesterday, (%s) is %s" % (stardate,TolPeakVV)
 #test
 print subject
 #snapshot test
-#test insertions
+#test no fast forward
