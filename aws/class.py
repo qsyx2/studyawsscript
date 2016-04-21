@@ -19,8 +19,4 @@ subject = "The peak VV yesterday, (%s) is %s" % (stardate,TolPeakVV)
 #test
 print subject
 #snapshot test
-<<<<<<< HEAD
 #test insertions
-=======
-#test insertions
->>>>>>> dev
