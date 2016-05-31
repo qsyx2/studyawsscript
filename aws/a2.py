@@ -4,7 +4,6 @@
 import boto3
 
 ec2 = boto3.resource('ec2')
-vpc = ec2.Vpc('vpc-df5df2ba')
 route_table = ec2.RouteTable('rtb-d629a8b3')
 client = boto3.client('ec2')
 #route_table_iterator = vpc.route_tables.all()
@@ -15,6 +14,8 @@ for instance in instances:
     natid = instance.id
 print natid
 
+#ec2.modify_instance_attribute(natid, attribute='sourceDestCheck', value=False)
+
 response = client.replace_route(
     DryRun=False,
     RouteTableId='rtb-d629a8b3',
@@ -23,3 +24,12 @@ response = client.replace_route(
 )
 
 response
+
+sdcheck = client.modify_instance_attribute(
+    InstanceId=natid,
+    SourceDestCheck={
+        'Value': False
+    }
+)
+sdcheck
+
