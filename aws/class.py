@@ -20,3 +20,4 @@ subject = "The peak VV yesterday, (%s) is %s" % (stardate,TolPeakVV)
 print subject
 #snapshot test
 #test no fast forward
+#test local git
